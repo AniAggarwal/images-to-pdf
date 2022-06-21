@@ -138,6 +138,7 @@ def convert_imgs(
 
 def imgs_to_pdf(imgs_dir, output_path):
     imgs_paths = [str(imgs_dir / name.name) for name in imgs_dir.iterdir()]
+    imgs_paths = sorted(imgs_paths)
 
     pdf = img2pdf.convert(imgs_paths)
     with open(output_path, "wb") as f:
